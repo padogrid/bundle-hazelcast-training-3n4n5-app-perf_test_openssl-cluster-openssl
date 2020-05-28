@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+SCRIPT_DIR="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
+. $SCRIPT_DIR/.addonenv.sh > /dev/null
+
+EXECUTABLE="`basename $0`"
+
+if [ "$HELP" == "true" ]; then
+   echo "Usage:"
+   echo "   ./$EXECUTABLE [-clean] [-?]"
+   echo ""
+   echo "   Builds an openssl environment for the workspace cluster by downloading"
+   echo "   and placing the dependencies in the cluster's lib directory."
+   echo "      $CLUSTER_DIR/lib"
+   echo ""
+   echo "Default: ./$EXECUTABLE"
+   echo ""
+   exit
+fi
+
+pushd $CLUSTER_DIR > /dev/null
+if [[ $OS_NAME == DARWIN* ]]; then
+   mvn -f pom-osx.xml install
+elif [[ $OS_NAME == CYGWIN* ]]; then
+   mvn -f pom-win.xml install
+else
+   mvn -f pom-linux.xml install
+fi
+
+popd > /dev/null
+
+#
+# Display build information
+#
+echo ""
+echo "Workspace: $HAZELCAST_ADDON_WORKSPACE"
+echo ""
+echo "Downloaded the required library files into the following directory."
+echo ""
+echo "   $CLUSTER_DIR/lib"
+echo ""
+echo "The certificate files included in this distribution are for *.demo.com."
+echo -e "Make sure to add the following entry in the ${CLightGreen}/etc/hosts${CNone} file before running"
+echo "the cluster."
+echo ""
+echo -e "${CLightGreen}<local ip-address> server1.demo.com server2.demo.com${CNone}"
+echo ""

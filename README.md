@@ -8,7 +8,7 @@ As part of the TLS/SSL lab of Hazelcast Operations Training, this bundle include
 install_bundle -download bundle-hazelcast-training-3-app-perf_test_openssl-cluster-openssl
 ```
 
-## Use CAse
+## Use Case
 
 *This bundle is for training use only.* As part of the OpenSSL lab, this bundles includes a cluster and an app configured with a private key and a trusted certificate.
 
@@ -61,7 +61,7 @@ Add the following line with `server1`, `server2`, and `server3` as host names fo
 
 If the bundle does not include openssl binaries in the lib directory then you must run the `build_app` script to download the binaries.
 
-```console
+```bash
 switch_cluster openssl
 cd bin_sh
 ./build_app
@@ -69,11 +69,9 @@ cd bin_sh
 
 ## Starting Cluster
 
-```console
+```bash
 # Add members. Bundles do not include members.
-add_member
-add_member
-add_member
+add_member; add_member
 
 # Start cluster
 start_cluster
@@ -84,16 +82,14 @@ show_log
 
 ## Starting Client
 
-```console
+```bash
 cd_app perf_test_openssl
 cd bin_sh
 ./test_ingestion -run
-
-# See SSL outputs
 ```
 
 ## Tearing Down
 
-```console
+```bash
 stop_cluster
 ```

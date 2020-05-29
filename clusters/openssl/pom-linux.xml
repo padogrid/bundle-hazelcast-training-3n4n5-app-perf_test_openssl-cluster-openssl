@@ -5,10 +5,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.hazelcast.addon</groupId>
-	<version>0.2.1</version>
-	<artifactId>hazelcast-addon-perf_test</artifactId>
+	<version>1.0.0</version>
+	<artifactId>bundle-hazelcast-training-3-app-perf_test_openssl-cluster-openssl</artifactId>
 	<packaging>pom</packaging>
-	<name>hazelcast-addon-perf_test</name>
+	<name>${project.artifactId}</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-handler</artifactId>
-			<version>[4.1.45,)</version>
+			<version>4.1.50.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>io.netty</groupId>

@@ -88,6 +88,8 @@ cd bin_sh
 ./test_ingestion -run
 ```
 
+The SSL debug is enabled for the `perf_test_openssl`, i.e., `-Djavax.net.debug=SSL` (see `setenv.sh`). You should see SSL debug outputs in the shell console.
+
 ## Tearing Down
 
 ```bash

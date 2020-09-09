@@ -9,3 +9,39 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+
+# vi
+*.swp
+
+# macOS
+.DS_Store
+
+# PadoGrid workspace
+/.addonenv.sh
+/initenv.sh
+/setenv.sh
+bundles
+lib
+plugins
+
+# PadoGrid workspace directories
+#apps
+#clusters
+docker
+k8s
+pods
+
+# Cluster
+run
+
+# App
+results
+apps/perf_test_ssl/etc/ssl
+
+# Bundle specifics
+archive
+log
+lib
+desktop
+setenv.sh0
+build

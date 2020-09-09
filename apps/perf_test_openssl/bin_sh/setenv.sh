@@ -61,13 +61,16 @@ JAVA_OPTS="$JAVA_OPTS \
 # For blue/green tests
 # These are imported from hazelcast-client-failover.xml which is used
 # to configure the clients apps only if the -failover option is specified.
-JAVA_OPTS="$JAVA_OPTS -Dhazelcast-addon.blue=$BLUE_FILE \
--Dhazelcast-addon.green=$GREEN_FILE" 
+JAVA_OPTS="$JAVA_OPTS -Dpadogrid.blue=$BLUE_FILE \
+-Dpadogrid.green=$GREEN_FILE"
 
 # HAZELCAST_CLIENT_CONFIG_FILE defaults to etc/hazelcast-client.xml
 # HAZELCAST_CLIENT_FAILOVER_CONFIG_FILE defaults to etc/hazelcast-client-failover.xml. It is
 # used only if the -failover option is specified.
 JAVA_OPTS="$JAVA_OPTS -Dhazelcast.client.config=$HAZELCAST_CLIENT_CONFIG_FILE \
 -Dhazelcast.client.failover.config=$HAZELCAST_CLIENT_FAILOVER_CONFIG_FILE"
+
+# Hibernate
+JAVA_OPTS="$JAVA_OPTS -Dhazelcast-addon.hibernate.config=$APP_ETC_DIR/hibernate.cfg-mysql.xml"
 
 # CLASSPATH="$CLASSPATH"

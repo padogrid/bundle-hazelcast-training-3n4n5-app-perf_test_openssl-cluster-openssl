@@ -15,8 +15,8 @@
 
 	<network>
 		<cluster-members>
-                        <address>localhost:5741</address>
-                        <address>localhost:5742</address>
+                        <address>rhel8:5741</address>
+                        <address>rhel8:5742</address>
                 </cluster-members>
 		<ssl enabled="true">
 		    <factory-class-name>com.hazelcast.nio.ssl.OpenSSLEngineFactory</factory-class-name>
@@ -39,4 +39,5 @@
 			</portable-factory>
 		</portable-factories>
 	</serialization>
+	
 </hazelcast-client>

@@ -12,11 +12,16 @@ install_bundle -download bundle-hazelcast-training-3-app-perf_test_openssl-clust
 
 *This bundle is for training use only.* As part of the OpenSSL lab, this bundles includes a cluster and an app configured with a private key and a trusted certificate.
 
-![OpenSSL Cluster Diagram](/images/openssl-cluster.jpg)
+![OpenSSL Cluster Diagram](images/openssl-cluster.jpg)
 
 ## Private Key and Trusted Certificate
 
 This distribution contains the following self-signed 4096-bit private key and trusted certificate files expiring on May 26, 2030.
+
+```bash
+switch_cluster openssl
+tree etc/ssl
+```
 
 ```console
 etc/ssl
@@ -88,7 +93,7 @@ cd bin_sh
 ./test_ingestion -run
 ```
 
-The SSL debug is enabled for the `perf_test_openssl`, i.e., `-Djavax.net.debug=SSL` (see `setenv.sh`). You should see SSL debug outputs in the shell console.
+The SSL debug is enabled for the `perf_test_openssl` app, i.e., `-Djavax.net.debug=SSL` (see `setenv.sh`). You should see SSL debug outputs in the shell console.
 
 ## Tearing Down
 

@@ -18,14 +18,19 @@
 			<address>localhost:5741</address>
 			<address>localhost:5742</address>
 		</cluster-members>
-		
-		<!-- buffer-size in KiB. Increase the buffer size as needed to get better throughput. -->
-		<!-- 
-		<socket-options>
-			<buffer-size>32768</buffer-size>
-		</socket-options>
-		-->
+		<ssl enabled="true">
+		    <factory-class-name>com.hazelcast.nio.ssl.OpenSSLEngineFactory</factory-class-name>
+		    <properties>
+			<property name="protocol">TLSv1.2</property>
+			<property name="trustCertCollectionFile">${trustCertCollectionFile}</property>
+			 <!-- If the TLS mutual authentication is not used,
+			     then the key configuration is not needed on client side. -->
+			<property name="keyFile">${keyFile}</property>
+			<property name="keyCertChainFile">${keyCertChainFile}</property>
+		    </properties>
+		</ssl>
 	</network>
+
 	<serialization>
 		<portable-version>1</portable-version>
 		<portable-factories>
@@ -34,28 +39,5 @@
 			</portable-factory>
 		</portable-factories>
 	</serialization>
-
-	<!-- Security settings using SimpleCredentialsFactory which is part of the 
-		padogrid distribution. -->
-	<!--
-	<security>
-		<credentials-factory
-			class-name="org.hazelcast.addon.security.jaas.simple.SimpleCredentialsFactory">
-			<properties>
-				<property name="username">dpark</property>
-				<property name="pw">dpark</property>
-			</properties>
-		</credentials-factory>
-	</security>
-	-->
-
-	<!-- Near cache for etc/group-get.properties. -->
-	<!--
-	<near-cache name="map*">
-		<in-memory-format>OBJECT</in-memory-format>
-		<eviction max-size-policy="ENTRY_COUNT" eviction-policy="LFU"
-			size="100000" />
-	</near-cache>
-	-->
 	
 </hazelcast-client>

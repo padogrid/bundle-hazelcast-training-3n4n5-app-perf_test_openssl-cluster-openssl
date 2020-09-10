@@ -5,7 +5,7 @@ As part of the TLS/SSL lab of Hazelcast Operations Training, this bundle include
 ## Installing Bundle
 
 ```bash
-install_bundle -download bundle-hazelcast-training-3-app-perf_test_openssl-cluster-openssl
+install_bundle -download bundle-hazelcast-training-3n4-app-perf_test_openssl-cluster-openssl
 ```
 
 ## Use Case
@@ -41,15 +41,14 @@ To check the certificate content, execute the following.
 openssl x509 -in etc/lab.crt -text
 ```
 
+## 1. Add Host Names
+
 The certficate is created for the domain name `demo.com` and hence you must set the domain name for your machine. This is done by defining host names with the domain name in the `/etc/hosts` file, which requires root acccess.
 
-**Unix:**
 
 ```bash
 sudo vi /etc/hosts
 ```
-
-**Windows:**
 
 ```dos
 notepad %windir%\system32\drivers\etc\hosts
@@ -62,17 +61,28 @@ Add the following line with `server1`, `server2`, and `server3` as host names fo
 192.168.1.6 mymachine server1.demo.com server2.demo.com server3.demo.com
 ```
 
-## Building `openssl` Cluster
+## 2. Initialize Environment
+
+First, intialize your bundle environment to your workspace's Hazelcast version. The followin scripts places the correct configuration files to their repestive `etc/` directories.
+
+```bash
+switch_cluster openssl; cd bin_sh
+./init_cluster
+
+cd_app perf_test_openssl; cd bin_sh
+./init_app
+```
+
+## 3. Build `openssl` Cluster
 
 If the bundle does not include openssl binaries in the lib directory then you must run the `build_app` script to download the binaries.
 
 ```bash
-switch_cluster openssl
-cd bin_sh
+switch_cluster openssl; cd bin_sh
 ./build_app
 ```
 
-## Starting Cluster
+## 4. Start `openssl` Cluster
 
 ```bash
 # Add members. Bundles do not include members.
@@ -85,17 +95,22 @@ start_cluster
 show_log
 ```
 
-## Starting Client
+## 5. Start Client
 
 ```bash
-cd_app perf_test_openssl
-cd bin_sh
+cd_app perf_test_openssl; cd bin_sh
+
+# To ingest data (ingest data into the 'eligibility' and 'profile' maps)
 ./test_ingestion -run
+
+# To read ingested data
+./read_cache eligibility
+./read_cache profile
 ```
 
 The SSL debug is enabled for the `perf_test_openssl` app, i.e., `-Djavax.net.debug=SSL` (see `setenv.sh`). You should see SSL debug outputs in the shell console.
 
-## Tearing Down
+## Teardown
 
 ```bash
 stop_cluster

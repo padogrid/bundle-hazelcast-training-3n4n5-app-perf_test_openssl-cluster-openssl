@@ -36,7 +36,6 @@ run
 
 # App
 results
-apps/perf_test_ssl/etc/ssl
 
 # Bundle specifics
 archive
@@ -45,3 +44,12 @@ lib
 desktop
 setenv.sh0
 build
+clusters/openssl/etc/hazelcast.xml
+apps/perf_test_openssl/etc/hazelcast-client-blue-mc.xml
+apps/perf_test_openssl/etc/hazelcast-client-green-mc.xml
+apps/perf_test_openssl/etc/hazelcast-client-mc.xml
+apps/perf_test_openssl/etc/v4/hazelcast-client-mc.xml
+apps/perf_test_openssl/etc/hazelcast-client-blue.xml
+apps/perf_test_openssl/etc/hazelcast-client-failover.xml
+apps/perf_test_openssl/etc/hazelcast-client-green.xml
+apps/perf_test_openssl/etc/hazelcast-client.xml

@@ -38,7 +38,7 @@ openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out lab.crt -keyou
 To check the certificate content, execute the following.
 
 ```bash
-openssl x509 -in etc/lab.crt -text
+openssl x509 -in etc/ssl/lab.crt -text
 ```
 
 ## 1. Add Host Names
@@ -68,9 +68,6 @@ First, intialize your bundle environment to your workspace's Hazelcast version. 
 ```bash
 switch_cluster openssl; cd bin_sh
 ./init_cluster
-
-cd_app perf_test_openssl; cd bin_sh
-./init_app
 ```
 
 ## 3. Build `openssl` Cluster

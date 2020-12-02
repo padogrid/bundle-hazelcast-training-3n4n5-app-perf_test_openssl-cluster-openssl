@@ -29,7 +29,7 @@
 		<!-- Executable permissions -->
 		<fileSet>
 			<directory>apps/perf_test_openssl/bin_sh</directory>
-			<outputDirectory>clusters/perf_test_openssl/bin_sh</outputDirectory>
+			<outputDirectory>apps/perf_test_openssl/bin_sh</outputDirectory>
 			<includes>
 				<include>**</include>
 			</includes>

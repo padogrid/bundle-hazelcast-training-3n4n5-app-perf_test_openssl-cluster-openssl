@@ -39,8 +39,7 @@ IMPORTANT:
 		<property name="hazelcast.phone.home.enabled">false</property>
 	</properties>
 	<cluster-name>dev</cluster-name>
-	<management-center>
-		${hazelcast-addon.management-center}
+	<management-center scripting-enabled="true">
 	</management-center>
 
 	<user-code-deployment enabled="true">

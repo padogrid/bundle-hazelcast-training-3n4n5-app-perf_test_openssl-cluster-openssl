@@ -34,7 +34,12 @@ if [ "$HELP" == "true" ]; then
    exit
 fi
 
-# Copy all
+# Place the correct version of Hazelcast config files in etc/
 cp $APP_DIR/etc/v$HAZELCAST_MAJOR_VERSION_NUMBER/* $APP_DIR/etc/
+
+# Place the correct version of Hazelcast client config files in perf_test_openssl
+if [ -d $APPS_DIR/perf_test_openssl/etc/v$HAZELCAST_MAJOR_VERSION_NUMBER ]; then
+   cp $APPS_DIR/perf_test_openssl/etc/v$HAZELCAST_MAJOR_VERSION_NUMBER/* $APPS_DIR/perf_test_openssl/etc/
+fi
 
 echo "App initialized."

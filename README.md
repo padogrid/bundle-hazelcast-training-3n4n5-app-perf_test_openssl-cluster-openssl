@@ -66,13 +66,13 @@ Add the following line with `server1`, `server2`, and `server3` as host names fo
 First, intialize your bundle environment to your workspace's Hazelcast version. The followin scripts places the correct configuration files to their respective `etc/` directories.
 
 ```bash
-# Intialize cluster
-switch_cluster openssl; cd bin_sh
-./init_cluster
-
 # Initialize client
 cd_app perf_test_openssl; cd bin_sh
 ./init_app
+
+# Intialize cluster
+switch_cluster openssl; cd bin_sh
+./init_cluster
 ```
 
 ## 3. Build `openssl` Cluster

@@ -5,7 +5,7 @@ As part of the TLS/SSL lab of Hazelcast Operations Training, this bundle include
 ## Installing Bundle
 
 ```bash
-install_bundle -download bundle-hazelcast-training-3n4-app-perf_test_openssl-cluster-openssl
+install_bundle -download bundle-hazelcast-training-3n4n5-app-perf_test_openssl-cluster-openssl
 ```
 
 ## Use Case
@@ -40,6 +40,11 @@ To check the certificate content, execute the following.
 ```bash
 openssl x509 -in etc/ssl/lab.crt -text
 ```
+:pencil2: OpenSSL may not work on macOS.
+
+:pencil2: Hazelcast Mangement Center only supports OpenSSL as a client to Hazelcast clusters and does not support OpenSSL for the browser. You must configure Java TLS/SSL for the brower to enable HTTPS. This bundle runs the Management Center with HTTP. For configuring HTTPS, see the following bundle.
+
+https://github.com/padogrid/bundle-hazelcast-training-3n4n5-app-perf_test_ssl-cluster-ssl
 
 ## 1. Add Host Names
 

@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>padogrid.addon</groupId>
-	<artifactId>bundle-hazelcast-training-3n4-app-perf_test_openssl-cluster-openssl</artifactId>
+	<artifactId>bundle-hazelcast-training-3n4n5-app-perf_test_openssl-cluster-openssl</artifactId>
 	<packaging>pom</packaging>
 	<name>${project.artifactId}</name>
 	<version>1.0.0</version>

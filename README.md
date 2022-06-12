@@ -4,6 +4,8 @@ As part of the TLS/SSL lab of Hazelcast Operations Training, this bundle include
 
 ## Installing Bundle
 
+![PadoGrid](https://github.com/padogrid/padogrid/raw/develop/images/padogrid-3d-16x16.png) [*Driven by PadoGrid*](https://github.com/padogrid)
+
 ```bash
 install_bundle -download bundle-hazelcast-training-3n4n5-app-perf_test_openssl-cluster-openssl
 ```

@@ -16,6 +16,9 @@ buildNumber.properties
 # macOS
 .DS_Store
 
+# VS Code
+workspace.code-workspace
+
 # PadoGrid workspace
 /.addonenv.sh
 /initenv.sh
@@ -56,3 +59,4 @@ apps/perf_test_openssl/etc/hazelcast-client-blue.xml
 apps/perf_test_openssl/etc/hazelcast-client-failover.xml
 apps/perf_test_openssl/etc/hazelcast-client-green.xml
 apps/perf_test_openssl/etc/hazelcast-client.xml
+.gitignore0

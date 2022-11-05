@@ -5,7 +5,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.hazelcast.addon</groupId>
-	<version>0.9.3-SNAPSHOT</version>
+	<version>0.9.22</version>
 	<artifactId>padogrid-perf_test</artifactId>
 	<packaging>pom</packaging>
 	<name>padogrid-perf_test</name>
@@ -15,6 +15,14 @@
 	</properties>
 
 	<dependencies>
+      <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-1.2-api -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-1.2-api</artifactId>
+    <version>2.19.0</version>
+    <scope>test</scope>
+</dependency>
+
 		<!-- Hibernate app -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>

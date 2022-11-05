@@ -51,6 +51,7 @@ if [[ $OS_NAME == CYGWIN* ]]; then
    KEY_FILE=$(cygpath -wp "$KEY_FILE")
    KEY_CERT_CHAIN_FILE=$(cygpath -wp "$KEY_CERT_CHAIN_FILE")
 fi
+
    
 JAVA_OPTS="$JAVA_OPTS \
 -DtrustCertCollectionFile="$TRUST_CERT_COLLECTION_FILE" \
@@ -74,3 +75,8 @@ JAVA_OPTS="$JAVA_OPTS -Dhazelcast.client.config=$HAZELCAST_CLIENT_CONFIG_FILE \
 JAVA_OPTS="$JAVA_OPTS -Dhazelcast-addon.hibernate.config=$APP_ETC_DIR/hibernate.cfg-mysql.xml"
 
 # CLASSPATH="$CLASSPATH"
+
+# Set Hazelcast version to download it via the 'build_app' script. This value overrides
+# the workspace product (Hazelcast) version. This variable should be set if your
+# application does not require Hazelcast locally installed.
+# HAZELCAST_VERSION=

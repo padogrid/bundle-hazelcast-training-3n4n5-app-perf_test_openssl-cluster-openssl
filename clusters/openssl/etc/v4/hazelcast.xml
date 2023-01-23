@@ -13,7 +13,7 @@
 
 IMPORTANT:
 
-   hazelcast-addon depends on several system properties, which must be specified
+   padogrid depends on several system properties, which must be specified
    in your hazelcast.xml. If you choose to use your own hazelcast.xml file then
    make sure to include all system properties found in this file. The following
    system properties are required: 
@@ -33,7 +33,7 @@ IMPORTANT:
 <hazelcast xmlns="http://www.hazelcast.com/schema/config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.hazelcast.com/schema/config
-           http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
+	http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
 
 	<properties>
 		<property name="hazelcast.phone.home.enabled">false</property>
@@ -90,7 +90,7 @@ IMPORTANT:
 		<queue-capacity>0</queue-capacity>
 	</executor-service>
 
-	<!-- hazelcast-addon serialization -->
+	<!-- padogrid serialization -->
 	<serialization>
 		<portable-version>1</portable-version>
 		<portable-factories>

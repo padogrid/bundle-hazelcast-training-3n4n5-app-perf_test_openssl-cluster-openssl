@@ -13,7 +13,7 @@
 
 IMPORTANT:
 
-   hazelcast-addon depends on several system properties, which must be specified
+   padogrid depends on several system properties, which must be specified
    in your hazelcast.xml. If you choose to use your own hazelcast.xml file then
    make sure to include all system properties found in this file. The following
    system properties are required: 
@@ -53,7 +53,7 @@ IMPORTANT:
 	</user-code-deployment>
 
 	<network>
-		<!-- hazelcast-addon explicitly assigns the TCP port numbers in order to 
+		<!-- padogrid explicitly assigns the TCP port numbers in order to 
 			launch multiple clusters on the same machine. -->
 		<port auto-increment="false">${hazelcast-addon.tcp.port}</port>
 		<outbound-ports>
@@ -95,7 +95,7 @@ IMPORTANT:
 		<queue-capacity>0</queue-capacity>
 	</executor-service>
 
-	<!-- hazelcast-addon serialization -->
+	<!-- padogrid serialization -->
 	<serialization>
 		<portable-version>1</portable-version>
 		<portable-factories>

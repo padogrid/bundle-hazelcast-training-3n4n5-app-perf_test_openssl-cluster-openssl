@@ -79,11 +79,11 @@ First, intialize your bundle environment to your workspace's Hazelcast version. 
 
 ```bash
 # Initialize client
-cd_app perf_test_openssl; cd bin_sh
+cd_app perf_test_openssl/bin_sh
 ./init_app
 
 # Intialize cluster
-switch_cluster openssl; cd bin_sh
+switch_cluster openssl/bin_sh
 ./init_cluster
 ```
 
@@ -92,7 +92,7 @@ switch_cluster openssl; cd bin_sh
 If the bundle does not include openssl binaries in the lib directory then you must run the `build_app` script to download the binaries.
 
 ```bash
-switch_cluster openssl; cd bin_sh
+switch_cluster openssl/bin_sh
 ./build_app
 ```
 
@@ -112,7 +112,7 @@ show_log
 ## 5. Start Client
 
 ```bash
-cd_app perf_test_openssl; cd bin_sh
+cd_app perf_test_openssl/bin_sh
 
 # To ingest data (ingest data into the 'eligibility' and 'profile' maps)
 ./test_ingestion -run
